@@ -865,28 +865,16 @@ abstract class BaseFacebook
       array('admin.getallocation' => 1,
             'admin.getappproperties' => 1,
             'admin.getbannedusers' => 1,
-            'admin.getlivestreamvialink' => 1,
-            'admin.getmetrics' => 1,
             'admin.getrestrictioninfo' => 1,
             'application.getpublicinfo' => 1,
-            'auth.getapppublickey' => 1,
             'auth.getsession' => 1,
-            'auth.getsignedpublicsessiondata' => 1,
             'comments.get' => 1,
             'connect.getunconnectedfriendscount' => 1,
-            'dashboard.getactivity' => 1,
             'dashboard.getcount' => 1,
-            'dashboard.getglobalnews' => 1,
-            'dashboard.getnews' => 1,
             'dashboard.multigetcount' => 1,
-            'dashboard.multigetnews' => 1,
             'data.getcookies' => 1,
             'events.get' => 1,
             'events.getmembers' => 1,
-            'fbml.getcustomtags' => 1,
-            'feed.getappfriendstories' => 1,
-            'feed.getregisteredtemplatebundlebyid' => 1,
-            'feed.getregisteredtemplatebundles' => 1,
             'fql.multiquery' => 1,
             'fql.query' => 1,
             'friends.arefriends' => 1,
@@ -894,7 +882,6 @@ abstract class BaseFacebook
             'friends.getappusers' => 1,
             'friends.getlists' => 1,
             'friends.getmutualfriends' => 1,
-            'gifts.get' => 1,
             'groups.get' => 1,
             'groups.getmembers' => 1,
             'intl.gettranslations' => 1,
@@ -905,13 +892,9 @@ abstract class BaseFacebook
             'pages.isadmin' => 1,
             'pages.isappadded' => 1,
             'pages.isfan' => 1,
-            'permissions.checkavailableapiaccess' => 1,
-            'permissions.checkgrantedapiaccess' => 1,
             'photos.get' => 1,
             'photos.getalbums' => 1,
             'photos.gettags' => 1,
-            'profile.getinfo' => 1,
-            'profile.getinfooptions' => 1,
             'stream.get' => 1,
             'stream.getcomments' => 1,
             'stream.getfilters' => 1,
@@ -921,7 +904,15 @@ abstract class BaseFacebook
             'users.hasapppermission' => 1,
             'users.isappuser' => 1,
             'users.isverified' => 1,
-            'video.getuploadlimits' => 1);
+            'video.getuploadlimits' => 1,
+            /**
+             * @todo remove following deprecated methods after Dec. 1st, 2011
+             * @see http://developers.facebook.com/roadmap/deprecations/
+             */
+            'dashboard.getactivity' => 1,
+            'dashboard.getglobalnews' => 1,
+            'dashboard.getnews' => 1,
+            'dashboard.multigetnews' => 1);
     $name = 'api';
     if (isset($READ_ONLY_CALLS[strtolower($method)])) {
       $name = 'api_read';
