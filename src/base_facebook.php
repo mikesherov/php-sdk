@@ -874,19 +874,12 @@ abstract class BaseFacebook
             'auth.getsignedpublicsessiondata' => 1,
             'comments.get' => 1,
             'connect.getunconnectedfriendscount' => 1,
-            'dashboard.getactivity' => 1,
             'dashboard.getcount' => 1,
-            'dashboard.getglobalnews' => 1,
-            'dashboard.getnews' => 1,
             'dashboard.multigetcount' => 1,
-            'dashboard.multigetnews' => 1,
             'data.getcookies' => 1,
             'events.get' => 1,
             'events.getmembers' => 1,
             'fbml.getcustomtags' => 1,
-            'feed.getappfriendstories' => 1,
-            'feed.getregisteredtemplatebundlebyid' => 1,
-            'feed.getregisteredtemplatebundles' => 1,
             'fql.multiquery' => 1,
             'fql.query' => 1,
             'friends.arefriends' => 1,
@@ -910,8 +903,6 @@ abstract class BaseFacebook
             'photos.get' => 1,
             'photos.getalbums' => 1,
             'photos.gettags' => 1,
-            'profile.getinfo' => 1,
-            'profile.getinfooptions' => 1,
             'stream.get' => 1,
             'stream.getcomments' => 1,
             'stream.getfilters' => 1,
@@ -921,7 +912,15 @@ abstract class BaseFacebook
             'users.hasapppermission' => 1,
             'users.isappuser' => 1,
             'users.isverified' => 1,
-            'video.getuploadlimits' => 1);
+            'video.getuploadlimits' => 1,
+            /**
+             * @todo remove the dashboard methods below after Dec. 1st, 2011
+             * @see http://developers.facebook.com/roadmap/deprecations/
+             */
+            'dashboard.getactivity' => 1,
+            'dashboard.getglobalnews' => 1,
+            'dashboard.getnews' => 1,
+            'dashboard.multigetnews' => 1);
     $name = 'api';
     if (isset($READ_ONLY_CALLS[strtolower($method)])) {
       $name = 'api_read';
